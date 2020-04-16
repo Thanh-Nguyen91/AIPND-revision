@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: Nguyen Thi Thanh
 # DATE CREATED:    16/04/2020                             
-# REVISED DATE: 
+# REVISED DATE:  16/04/2020
 # PURPOSE: Create a function adjust_results4_isadog that adjusts the results 
 #          dictionary to indicate whether or not the pet image label is of-a-dog, 
 #          and to indicate whether or not the classifier image label is of-a-dog.

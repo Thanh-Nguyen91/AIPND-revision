@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: Nguyen Thi Thanh
 # DATE CREATED:  16/04/2020                                
-# REVISED DATE: 
+# REVISED DATE: 16/04/2020
 # PURPOSE: Create a function calculates_results_stats that calculates the 
 #          statistics of the results of the programrun using the classifier's model 
 #          architecture to classify the images. This function will use the 
@@ -68,7 +68,7 @@ def calculates_results_stats(results_dic):
                      and the classroom Item XX Calculating Results for details
                      on how to calculate the counts and statistics.
     """        
-     results_stats_dic = {'n_images':0,'n_dogs_img':0,'n_notdogs_img':0,
+    results_stats_dic = {'n_images':0,'n_dogs_img':0,'n_notdogs_img':0,
                          'n_match':0,'n_correct_dogs':0,'n_correct_notdogs':0,
                          'n_correct_breed':0,'pct_match':0,'pct_correct_dogs':0,
                          'pct_correct_breed':0,'pct_correct_notdogs':0}

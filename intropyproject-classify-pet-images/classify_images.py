@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: Nguyen Thi Thanh
 # DATE CREATED:    16/04/2020                             
-# REVISED DATE: 
+# REVISED DATE: 16/04/2020
 # PURPOSE: Create a function classify_images that uses the classifier function 
 #          to create the classifier labels and then compares the classifier 
 #          labels to the pet image labels. This function inputs:

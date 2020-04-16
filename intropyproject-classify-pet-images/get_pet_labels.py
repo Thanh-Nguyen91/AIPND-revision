@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: Nguyen Thi Thanh
 # DATE CREATED:    16/04/2020                              
-# REVISED DATE: 
+# REVISED DATE: 16/04/2020
 # PURPOSE: Create the function get_pet_labels that creates the pet labels from 
 #          the image's filename. This function inputs: 
 #           - The Image Folder as image_dir within get_pet_labels function and 
