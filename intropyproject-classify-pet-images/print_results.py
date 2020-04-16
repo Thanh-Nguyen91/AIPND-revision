@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/print_results.py
 #                                                                             
-# PROGRAMMER: 
-# DATE CREATED:
+# PROGRAMMER:  Nguyen Thi Thanh
+# DATE CREATED: 16/04/2020
 # REVISED DATE: 
 # PURPOSE: Create a function print_results that prints the results statistics
 #          from the results statistics dictionary (results_stats_dic). It 
@@ -62,5 +62,33 @@ def print_results(results_dic, results_stats_dic, model,
     Returns:
            None - simply printing results.
     """    
-    None
+    print("\n\n*** Results for CNN Model Architecture",model.upper(),"***")
+    print("{:<20}: {:5d}".format('N Images', results_stats_dic['n_images']))
+    print("{:<20}: {:5d}".format('N Dog Images', results_stats_dic['n_dogs_img']))
+    print("{:<20}: {:5d}".format('N NON-dog Images', results_stats_dic['n_notdogs_img']))
+    print("{:<60}: {:>5.2f}".format('Pct matches', results_stats_dic['pct_match']))
+    print("{:<60}: {:>5.2f}".format('Pct correctly classified dogs',
+                                    results_stats_dic['pct_correct_dogs']))
+    print("{:<60}: {:>5.2f}".format('Pct correctly classified dog breeds',
+                                 results_stats_dic['pct_correct_breed']))
+    print("{:<60}: {:>5.2f}".format('Pct correctly classified NON-dogs',
+                                 results_stats_dic['pct_correct_notdogs']))
+    
+    # prints incorrectly classified dog images: idx4 != idx3
+    if print_incorrect_dogs and (results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'])!= results_stats_dic['n_images']:
+        print("\n\n*** Incorrectly classified dog images ***")
+        for pet_image,pet_label in results_dic.items():
+            idx3 = pet_label[3]                                                                        
+            idx4 = pet_label[4]
+            if idx3!=idx4:
+                print('{:<25}\nReal: {:<20} Classifier: {}\nPetLabelDog: {} ClassLabelDog: {}'.format(pet_image,pet_label[0],pet_label[1],idx3,idx4))
+            
+    # prints incorrectly classified dog breeds: idx2=0 and idx3 = 1
+    if print_incorrect_breed and results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']:
+        print("\n\n*** Incorrectly classified dog breeds ***")
+        for pet_image,pet_label in results_dic.items():
+            idx3 = pet_label[3]                                                                        
+            idx2 = pet_label[2]
+            if (idx2,idx3)==(0,1):
+                print('{:<25}\nReal: {:<20} Classifier: {}\nPetLabelDog: {} ClassLabelDog: {}'.format(pet_image,pet_label[0],pet_label[1],idx3,pet_label[4]))                
                 
